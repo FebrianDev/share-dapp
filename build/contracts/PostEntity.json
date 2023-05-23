@@ -12,8 +12,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -42,8 +41,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -56,8 +54,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -101,8 +98,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -140,8 +136,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -208,8 +203,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -254,8 +248,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -274,8 +267,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -16861,11 +16853,16 @@
       "links": {},
       "address": "0x9C0EEe5c6ACc75F83e1bC427417103d2FbC7E010",
       "transactionHash": "0xb62d2a8e120506174818f0cedc910da3feed9b2493bfd82f11489c31e48950a6"
+    },
+    "80001": {
+      "events": {},
+      "links": {},
+      "address": "0x667Bc64E953B4a74c8e1C82Cd3F5dfF4319b701F",
+      "transactionHash": "0xa7b1b6b19caaf9bcb82143e44c1a9f8b63e5d49aad6975494b1dafd1285e4f68"
     }
   },
   "schemaVersion": "3.4.13",
-  "updatedAt": "2023-05-21T11:03:59.826Z",
-  "networkType": "ethereum",
+  "updatedAt": "2023-05-23T00:47:46.292Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

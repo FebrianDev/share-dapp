@@ -45,8 +45,6 @@
 // const { MNEMONIC, PROJECT_ID } = process.env;
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
-const fs = require('fs');
-const mnemonic = fs.readFileSync(".secret").toString().trim();
 
 module.exports = {
     /**
@@ -71,14 +69,23 @@ module.exports = {
             port: 5555,            // Standard Ethereum port (default: none)
             network_id: "*",       // Any network (default: none)
         },
-
         matic: {
-            provider: () => new HDWalletProvider("absurd situate plug wagon donate grief pudding engine action admit shrug below", `https://rpc-mumbai.maticvigil.com`),
+            provider: () => new HDWalletProvider("absurd situate plug wagon donate grief pudding engine action admit shrug below", `https://rpc-mumbai.maticvigil.com/v1/ec8028168028b74df12bcb90c375cde51a632962`),
             network_id: 80001,
             confirmations: 2,
             timeoutBlocks: 200,
             skipDryRun: true,
-            gas: 6000000,
+            gas: 10000000,
+            gasPrice: 10000000000,
+        },
+
+        dashboard: {
+            provider: () => new HDWalletProvider("absurd situate plug wagon donate grief pudding engine action admit shrug below", `https://rpc.public.zkevm-test.net`),
+            network_id: 1442,
+            confirmations: 2,
+            timeoutBlocks: 200,
+            skipDryRun: true,
+            gas: 1000000,
             gasPrice: 10000000000,
         },
 
@@ -122,10 +129,10 @@ module.exports = {
             version: "0.8.19",      // Fetch exact version from solc-bin (default: truffle's version)
             // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
             // settings: {          // See the solidity docs for advice about optimization and evmVersion
-            //  optimizer: {
-            //    enabled: false,
-            //    runs: 200
-            //  },
+              optimizer: {
+               enabled: true,
+                runs: 200
+              },
             //  evmVersion: "byzantium"
             // }
         }

@@ -10,7 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@maticnetwork/maticjs": "^3.6.0-beta.11",
+    "@maticnetwork/maticjs-web3": "^1.0.4",
+    "@metamask/sdk": "^0.2.4",
     "@truffle/hdwallet-provider": "^2.1.11",
+    "ethereumjs-util": "^7.1.5",
+    "ethers": "^6.4.0",
     "express": "^4.18.2",
     "truffle": "^5.9.1",
     "web3": "^1.10.0"
