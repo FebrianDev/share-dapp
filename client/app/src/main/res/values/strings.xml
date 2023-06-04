@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">ShareDapps</string>
+    <string name="sharedapp">Share - Dapp</string>
+    <string name="logo">Logo</string>
+    <string name="image_boarding">Image Boarding</string>
+    <string name="options">Options</string>
+    <string name="like">Like</string>
+    <string name="comment">Comment</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="home">Home</string>
+    <string name="back">Back</string>
+    <string name="detail_post">Detail Post</string>
+    <string name="no_comment">No Comment</string>
+    <string name="type_your_message">Type Your Message</string>
+    <string name="send">Send</string>
+    <string name="create_new_post">Create New Post</string>
+    <string name="_0_320">0/320</string>
+    <string name="tell_your_story">Tell Your Story</string>
+    <string name="post">Post</string>
+    <string name="add_post">Add Post</string>
+    <string name="success_add_post">Success Create Post</string>
+    <string name="finish">Finish</string>
+    <string name="copy_text_to_clipboard">Copy Text to Clipboard</string>
+    <string name="share_post">Share Post</string>
+    <string name="delete_post">Delete Post</string>
+    <string name="delete">Delete</string>
+    <string name="logout">Logout\n</string>
+    <string name="are_you_sure_logout">Are you sure logout?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+</resources>

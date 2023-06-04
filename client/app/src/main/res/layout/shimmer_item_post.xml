@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="24dp"
+        android:layout_height="32dp"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:background="#ddd"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/card1"
+        app:layout_constraintEnd_toStartOf="@+id/card1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/card1" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/CustomCardViewStyleRight"
+        android:elevation="2dp"
+        app:cardElevation="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="48dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="8dp">
+
+            <ImageButton
+                android:id="@+id/btn_options"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="0dp"
+                android:background="#ddd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tweet1"
+                android:contentDescription="@string/options" />
+
+            <TextView
+                android:id="@+id/tweet1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="42dp"
+                android:minLines="1"
+                android:background="#ddd"
+                app:layout_constraintEnd_toStartOf="@+id/btn_options"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btn_options" />
+            <TextView
+                android:id="@+id/tweet2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="42dp"
+                android:minLines="1"
+                android:background="#ddd"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toStartOf="@+id/btn_options"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tweet1" />
+
+            <ImageButton
+                android:id="@+id/btn_like"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@+id/tweet2"
+                android:background="#ddd"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:contentDescription="@string/like" />
+            <TextView
+                android:id="@+id/like_count"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:background="#ddd"
+                app:layout_constraintStart_toEndOf="@+id/btn_like"
+                app:layout_constraintTop_toTopOf="@id/btn_like"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_like"
+                />
+
+            <ImageButton
+                android:id="@+id/btn_comment"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="24dp"
+                android:background="#ddd"
+                app:layout_constraintStart_toEndOf="@id/like_count"
+                app:layout_constraintTop_toTopOf="@+id/like_count"
+                app:layout_constraintBottom_toBottomOf="@+id/like_count"
+                android:contentDescription="@string/comment" />
+            <TextView
+                android:id="@+id/comment_count"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:background="#ddd"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@+id/btn_comment"
+                app:layout_constraintTop_toTopOf="@id/btn_comment"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_comment"
+                />
+
+            <ImageButton
+                android:id="@+id/btn_bookmark"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="0dp"
+                android:background="#ddd"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/tweet2"
+                android:contentDescription="@string/bookmark" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
