@@ -17,18 +17,31 @@ contract PostEntity {
 
     Post [] listPost;
 
+    Post public removeMe;
+
     struct Like {
-        uint likeId;
         uint postId;
         address userId;
     }
 
     mapping(uint => Like) public likes;
-    uint public likeIdCounter;
 
-    Like [] listLike;
+    struct Comment {
+        uint commentId;
+        uint postId;
+        string userId;
+        string content;
+        uint timestamp;
+    }
 
-    Post public removeMe;
+    mapping(uint => Comment []) public comments;
+
+    uint256 public commentIdCounter;
+
+    Comment [] listComment;
+    Comment [] newComment;
+
+    Comment public removeComment;
 
     function createPost(string memory _userId, string memory _content, uint _timestamp) public {
         postIdCounter++;
@@ -45,14 +58,12 @@ contract PostEntity {
         return listPost;
     }
 
-    function getLike(uint _postId) public view returns (address) {
-        return (likes[_postId].userId);
+    function getLike(uint _postId) public view returns (address, uint) {
+        return (likes[_postId].userId, _postId);
     }
 
     function addAddressInLike(uint _postId, address _userId) public {
-        likeIdCounter++;
-        likes[likeIdCounter] = Like(likeIdCounter, _postId, _userId);
-        listLike.push(Like(likeIdCounter, _postId, _userId));
+        likes[_postId] = Like(_postId, _userId);
     }
 
     function updateLikeInPost(uint _id, int like) public {
@@ -70,6 +81,25 @@ contract PostEntity {
         }
     }
 
+    function updateCommentInPost(uint _id, uint256 comment) public {
+        require(posts[_id].postId != 0, "Post is not available");
+
+        Post storage newPostMap = posts[_id];
+        newPostMap.comments = newPostMap.comments + comment;
+
+        for (uint i = 0; i < listPost.length; i++) {
+            if (listPost[i].postId == _id) {
+                Post storage newPost = listPost[i];
+                newPost.comments = newPost.comments + comment;
+                break;
+            }
+        }
+    }
+
+    function deleteLike(uint256 _id) public {
+        delete likes[_id];
+    }
+
     function deletePost(uint256 _id) public {
         require(posts[_id].postId != 0, "Post is not available");
         delete posts[_id];
@@ -83,4 +113,40 @@ contract PostEntity {
         listPost.pop();
     }
 
+    function createComment(uint _postId, string memory _userId, string memory _content, uint _timestamp) public {
+        commentIdCounter++;
+        listComment.push(Comment(commentIdCounter, _postId, _userId, _content, _timestamp));
+    }
+
+    function getComment(uint _postId) public {
+        clearNewComment();
+
+        for (uint i = 0; i < listComment.length; i++) {
+            if (listComment[i].postId == _postId) {
+                Comment storage c = listComment[i];
+                newComment.push(c);
+            }
+        }
+    }
+
+    function getComment() public view returns (Comment [] memory) {
+        return newComment;
+    }
+
+    function clearNewComment() private {
+        for (uint i = 0; i < newComment.length; i++) {
+            newComment.pop();
+        }
+    }
+
+    function deleteComment(uint256 _id) public {
+        for (uint i = 0; i < listComment.length; i++) {
+            if (listComment[i].commentId == _id) {
+                removeComment = listComment[i];
+                listComment[i] = listComment[listComment.length - 1];
+                listComment[listComment.length - 1] = removeComment;
+            }
+        }
+        listComment.pop();
+    }
 }
